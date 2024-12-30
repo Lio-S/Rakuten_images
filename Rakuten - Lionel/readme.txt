@@ -2,8 +2,8 @@
 les librairies dans le requirement sont les librairies de bases (packages complet ci-après)
 Dossier images, et les quatre csv dans: app>data
 Téléchargement automatique des fichiers pré-traités si force_preprocess=True ou absence des fichiers dans output_preprocessed_filename = "app/data/processed_data"
-! Liens valide jusqu'au 17.01.2025 12h.
 Se mettre dans le dossier app et exécuter main.pyenv
+Dé-zipper les quatre modèles (app>data>models) si vous ne voulez pas les regénérer.
 Pour regénérer l'entrainement des modèles, il suffit de supprimer le dossier du/des modèle(s) dans app/data/models
 
 ######## Python 3.10.12 (avec pyenv), sous WSL2 ubuntu_24.04 
