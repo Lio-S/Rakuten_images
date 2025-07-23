@@ -2960,3 +2960,623 @@ Stack trace:
 2024-12-30 13:38:12,487 - classification_pipeline - INFO - Prédiction avec modèle ML
 2024-12-30 13:38:14,029 - classification_pipeline - INFO - Prédiction avec modèle ML
 2024-12-30 13:38:17,632 - classification_pipeline - INFO - Modèle neural_net chargé depuis ./data/models/neural_net
+2025-07-21 19:25:24,434 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:25:26,707 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-21 19:28:12,216 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:28:14,568 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-21 19:29:35,439 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:29:37,548 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-21 19:29:37,553 - classification_pipeline - INFO - Début entraînement xgboost
+2025-07-21 19:29:37,554 - classification_pipeline - ERROR - Erreur entraînement xgboost: 1320
+2025-07-21 19:32:04,786 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 19:32:04,787 - classification_pipeline - ERROR - Erreur préparation données: [Errno 2] No such file or directory: 'data/X_train_update.csv'
+2025-07-21 19:33:16,969 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 19:33:19,868 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 19:33:19,873 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 19:42:10,806 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 19:42:13,904 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 19:42:13,910 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 19:44:45,369 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 19:44:45,369 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 19:44:48,364 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 19:44:48,371 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 19:57:15,465 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 19:57:15,466 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 19:57:18,453 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 19:57:18,458 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 20:10:40,608 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:10:40,610 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:10:43,518 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 20:10:43,523 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 20:14:16,972 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:14:16,972 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:14:19,901 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 20:14:19,907 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 20:14:52,393 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:14:52,393 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:14:55,407 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 20:14:55,413 - classification_pipeline - ERROR - Erreur préparation données: 1320
+2025-07-21 20:18:45,750 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:18:45,750 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:18:46,272 - classification_pipeline - INFO - Nettoyage des codes de catégorie...
+2025-07-21 20:18:46,273 - classification_pipeline - INFO - Codes originaux: [10, 40, 50, 60, 1140, 1160, 1180, 1280, 1281, 1300, 1301, 1302, 1320, 1560, 1920, 1940, 2060, 2220, 2280, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:18:46,316 - classification_pipeline - INFO - Codes après nettoyage: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1300, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:18:46,316 - classification_pipeline - WARNING - Codes invalides restants: {1300}
+2025-07-21 20:18:46,319 - classification_pipeline - WARNING - Suppression de 5045 lignes avec codes invalides
+2025-07-21 20:18:46,335 - classification_pipeline - INFO - Données finales: 79871 échantillons d'entraînement
+2025-07-21 20:18:46,336 - classification_pipeline - INFO - Catégories présentes: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:18:48,553 - classification_pipeline - INFO - Indices retenus: 52000 sur 63896 images
+2025-07-21 20:18:48,558 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-21 20:18:48,562 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-21 20:18:48,567 - classification_pipeline - INFO - Classe 194 (Épicerie): 2000 images
+2025-07-21 20:18:48,574 - classification_pipeline - INFO - Classe 156 (Mobilier): 2000 images
+2025-07-21 20:18:48,580 - classification_pipeline - INFO - Classe 228 (Journaux et revues occasion): 2000 images
+2025-07-21 20:18:48,586 - classification_pipeline - INFO - Classe 4 (Jeux consoles neuf): 2000 images
+2025-07-21 20:18:48,592 - classification_pipeline - INFO - Classe 1 (Livres occasion): 2000 images
+2025-07-21 20:18:48,598 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-21 20:18:48,604 - classification_pipeline - INFO - Classe 206 (Décoration): 2000 images
+2025-07-21 20:18:48,610 - classification_pipeline - INFO - Classe 128 (Jouets enfant): 2000 images
+2025-07-21 20:18:48,615 - classification_pipeline - INFO - Classe 114 (Objets pop culture): 2000 images
+2025-07-21 20:18:48,622 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-21 20:18:48,628 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-21 20:18:48,634 - classification_pipeline - INFO - Classe 116 (Cartes de jeux): 2000 images
+2025-07-21 20:18:48,640 - classification_pipeline - INFO - Classe 132 (Puériculture): 2000 images
+2025-07-21 20:18:48,646 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-21 20:18:48,652 - classification_pipeline - INFO - Classe 222 (Animalerie): 2000 images
+2025-07-21 20:18:48,658 - classification_pipeline - INFO - Classe 192 (Linge de maison): 2000 images
+2025-07-21 20:18:48,664 - classification_pipeline - INFO - Classe 118 (Jeux de rôle et figurines): 2000 images
+2025-07-21 20:18:48,671 - classification_pipeline - INFO - Classe 5 (Accessoires gaming): 2000 images
+2025-07-21 20:18:48,677 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-21 20:18:48,683 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-21 20:18:48,689 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-21 20:18:48,695 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-21 20:18:48,700 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-21 20:18:48,706 - classification_pipeline - INFO - Classe 6 (Consoles de jeux): 2000 images
+2025-07-21 20:18:48,727 - classification_pipeline - INFO - Création dataset X_train à partir de 52000 entrées...
+2025-07-21 20:18:50,003 - classification_pipeline - INFO - Dataset créé avec 52000 images (0 non trouvées)
+2025-07-21 20:18:50,005 - classification_pipeline - ERROR - Erreur préparation données: num_workers option should be non-negative; use num_workers=0 to disable multiprocessing.
+2025-07-21 20:19:21,049 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:19:21,049 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:19:21,583 - classification_pipeline - INFO - Nettoyage des codes de catégorie...
+2025-07-21 20:19:21,584 - classification_pipeline - INFO - Codes originaux: [10, 40, 50, 60, 1140, 1160, 1180, 1280, 1281, 1300, 1301, 1302, 1320, 1560, 1920, 1940, 2060, 2220, 2280, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:19:21,629 - classification_pipeline - INFO - Codes après nettoyage: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1300, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:19:21,629 - classification_pipeline - WARNING - Codes invalides restants: {1300}
+2025-07-21 20:19:21,630 - classification_pipeline - WARNING - Suppression de 5045 lignes avec codes invalides
+2025-07-21 20:19:21,644 - classification_pipeline - INFO - Données finales: 79871 échantillons d'entraînement
+2025-07-21 20:19:21,645 - classification_pipeline - INFO - Catégories présentes: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:19:23,934 - classification_pipeline - INFO - Indices retenus: 52000 sur 63896 images
+2025-07-21 20:19:23,941 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-21 20:19:23,946 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-21 20:19:23,952 - classification_pipeline - INFO - Classe 194 (Épicerie): 2000 images
+2025-07-21 20:19:23,959 - classification_pipeline - INFO - Classe 156 (Mobilier): 2000 images
+2025-07-21 20:19:23,966 - classification_pipeline - INFO - Classe 228 (Journaux et revues occasion): 2000 images
+2025-07-21 20:19:23,974 - classification_pipeline - INFO - Classe 4 (Jeux consoles neuf): 2000 images
+2025-07-21 20:19:23,981 - classification_pipeline - INFO - Classe 1 (Livres occasion): 2000 images
+2025-07-21 20:19:23,987 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-21 20:19:23,993 - classification_pipeline - INFO - Classe 206 (Décoration): 2000 images
+2025-07-21 20:19:23,998 - classification_pipeline - INFO - Classe 128 (Jouets enfant): 2000 images
+2025-07-21 20:19:24,004 - classification_pipeline - INFO - Classe 114 (Objets pop culture): 2000 images
+2025-07-21 20:19:24,010 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-21 20:19:24,016 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-21 20:19:24,023 - classification_pipeline - INFO - Classe 116 (Cartes de jeux): 2000 images
+2025-07-21 20:19:24,029 - classification_pipeline - INFO - Classe 132 (Puériculture): 2000 images
+2025-07-21 20:19:24,035 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-21 20:19:24,041 - classification_pipeline - INFO - Classe 222 (Animalerie): 2000 images
+2025-07-21 20:19:24,047 - classification_pipeline - INFO - Classe 192 (Linge de maison): 2000 images
+2025-07-21 20:19:24,052 - classification_pipeline - INFO - Classe 118 (Jeux de rôle et figurines): 2000 images
+2025-07-21 20:19:24,058 - classification_pipeline - INFO - Classe 5 (Accessoires gaming): 2000 images
+2025-07-21 20:19:24,064 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-21 20:19:24,069 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-21 20:19:24,075 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-21 20:19:24,081 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-21 20:19:24,085 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-21 20:19:24,091 - classification_pipeline - INFO - Classe 6 (Consoles de jeux): 2000 images
+2025-07-21 20:19:24,113 - classification_pipeline - INFO - Création dataset X_train à partir de 52000 entrées...
+2025-07-21 20:19:25,403 - classification_pipeline - INFO - Dataset créé avec 52000 images (0 non trouvées)
+2025-07-21 20:19:25,406 - classification_pipeline - ERROR - Erreur préparation données: prefetch_factor option could only be specified in multiprocessing.let num_workers > 0 to enable multiprocessing, otherwise set prefetch_factor to None.
+2025-07-21 20:19:54,198 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:19:54,199 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:19:54,717 - classification_pipeline - INFO - Nettoyage des codes de catégorie...
+2025-07-21 20:19:54,717 - classification_pipeline - INFO - Codes originaux: [10, 40, 50, 60, 1140, 1160, 1180, 1280, 1281, 1300, 1301, 1302, 1320, 1560, 1920, 1940, 2060, 2220, 2280, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:19:54,762 - classification_pipeline - INFO - Codes après nettoyage: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1300, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:19:54,762 - classification_pipeline - WARNING - Codes invalides restants: {1300}
+2025-07-21 20:19:54,763 - classification_pipeline - WARNING - Suppression de 5045 lignes avec codes invalides
+2025-07-21 20:19:54,776 - classification_pipeline - INFO - Données finales: 79871 échantillons d'entraînement
+2025-07-21 20:19:54,777 - classification_pipeline - INFO - Catégories présentes: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:19:57,067 - classification_pipeline - INFO - Indices retenus: 52000 sur 63896 images
+2025-07-21 20:19:57,077 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-21 20:19:57,086 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-21 20:19:57,092 - classification_pipeline - INFO - Classe 194 (Épicerie): 2000 images
+2025-07-21 20:19:57,098 - classification_pipeline - INFO - Classe 156 (Mobilier): 2000 images
+2025-07-21 20:19:57,104 - classification_pipeline - INFO - Classe 228 (Journaux et revues occasion): 2000 images
+2025-07-21 20:19:57,110 - classification_pipeline - INFO - Classe 4 (Jeux consoles neuf): 2000 images
+2025-07-21 20:19:57,115 - classification_pipeline - INFO - Classe 1 (Livres occasion): 2000 images
+2025-07-21 20:19:57,121 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-21 20:19:57,127 - classification_pipeline - INFO - Classe 206 (Décoration): 2000 images
+2025-07-21 20:19:57,132 - classification_pipeline - INFO - Classe 128 (Jouets enfant): 2000 images
+2025-07-21 20:19:57,137 - classification_pipeline - INFO - Classe 114 (Objets pop culture): 2000 images
+2025-07-21 20:19:57,143 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-21 20:19:57,148 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-21 20:19:57,154 - classification_pipeline - INFO - Classe 116 (Cartes de jeux): 2000 images
+2025-07-21 20:19:57,160 - classification_pipeline - INFO - Classe 132 (Puériculture): 2000 images
+2025-07-21 20:19:57,166 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-21 20:19:57,171 - classification_pipeline - INFO - Classe 222 (Animalerie): 2000 images
+2025-07-21 20:19:57,177 - classification_pipeline - INFO - Classe 192 (Linge de maison): 2000 images
+2025-07-21 20:19:57,182 - classification_pipeline - INFO - Classe 118 (Jeux de rôle et figurines): 2000 images
+2025-07-21 20:19:57,187 - classification_pipeline - INFO - Classe 5 (Accessoires gaming): 2000 images
+2025-07-21 20:19:57,193 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-21 20:19:57,198 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-21 20:19:57,203 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-21 20:19:57,209 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-21 20:19:57,214 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-21 20:19:57,219 - classification_pipeline - INFO - Classe 6 (Consoles de jeux): 2000 images
+2025-07-21 20:19:57,242 - classification_pipeline - INFO - Création dataset X_train à partir de 52000 entrées...
+2025-07-21 20:19:58,544 - classification_pipeline - INFO - Dataset créé avec 52000 images (0 non trouvées)
+2025-07-21 20:57:08,181 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 20:57:08,181 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 20:57:08,849 - classification_pipeline - INFO - Nettoyage des codes de catégorie...
+2025-07-21 20:57:08,850 - classification_pipeline - INFO - Codes originaux: [10, 40, 50, 60, 1140, 1160, 1180, 1280, 1281, 1300, 1301, 1302, 1320, 1560, 1920, 1940, 2060, 2220, 2280, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:57:08,894 - classification_pipeline - INFO - Codes après nettoyage: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1300, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:57:08,894 - classification_pipeline - WARNING - Codes invalides restants: {1300}
+2025-07-21 20:57:08,895 - classification_pipeline - WARNING - Suppression de 5045 lignes avec codes invalides
+2025-07-21 20:57:08,910 - classification_pipeline - INFO - Données finales: 79871 échantillons d'entraînement
+2025-07-21 20:57:08,911 - classification_pipeline - INFO - Catégories présentes: [1, 4, 5, 6, 114, 116, 118, 128, 132, 156, 192, 194, 206, 222, 228, 1281, 1301, 1302, 2403, 2462, 2522, 2582, 2583, 2585, 2705, 2905]
+2025-07-21 20:57:11,714 - classification_pipeline - INFO - Indices retenus: 52000 sur 63896 images
+2025-07-21 20:57:11,719 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-21 20:57:11,723 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-21 20:57:11,728 - classification_pipeline - INFO - Classe 194 (Épicerie): 2000 images
+2025-07-21 20:57:11,737 - classification_pipeline - INFO - Classe 156 (Mobilier): 2000 images
+2025-07-21 20:57:11,742 - classification_pipeline - INFO - Classe 228 (Journaux et revues occasion): 2000 images
+2025-07-21 20:57:11,747 - classification_pipeline - INFO - Classe 4 (Jeux consoles neuf): 2000 images
+2025-07-21 20:57:11,753 - classification_pipeline - INFO - Classe 1 (Livres occasion): 2000 images
+2025-07-21 20:57:11,759 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-21 20:57:11,764 - classification_pipeline - INFO - Classe 206 (Décoration): 2000 images
+2025-07-21 20:57:11,770 - classification_pipeline - INFO - Classe 128 (Jouets enfant): 2000 images
+2025-07-21 20:57:11,775 - classification_pipeline - INFO - Classe 114 (Objets pop culture): 2000 images
+2025-07-21 20:57:11,780 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-21 20:57:11,786 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-21 20:57:11,792 - classification_pipeline - INFO - Classe 116 (Cartes de jeux): 2000 images
+2025-07-21 20:57:11,799 - classification_pipeline - INFO - Classe 132 (Puériculture): 2000 images
+2025-07-21 20:57:11,805 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-21 20:57:11,810 - classification_pipeline - INFO - Classe 222 (Animalerie): 2000 images
+2025-07-21 20:57:11,815 - classification_pipeline - INFO - Classe 192 (Linge de maison): 2000 images
+2025-07-21 20:57:11,820 - classification_pipeline - INFO - Classe 118 (Jeux de rôle et figurines): 2000 images
+2025-07-21 20:57:11,825 - classification_pipeline - INFO - Classe 5 (Accessoires gaming): 2000 images
+2025-07-21 20:57:11,830 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-21 20:57:11,836 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-21 20:57:11,841 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-21 20:57:11,846 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-21 20:57:11,852 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-21 20:57:11,857 - classification_pipeline - INFO - Classe 6 (Consoles de jeux): 2000 images
+2025-07-21 20:57:11,878 - classification_pipeline - INFO - Création dataset X_train à partir de 52000 entrées...
+2025-07-21 21:00:34,295 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-21 21:00:34,295 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-21 21:00:37,159 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-21 21:00:37,165 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-21 21:00:37,169 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-21 21:00:37,175 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-21 21:00:37,184 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-21 21:00:37,189 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-21 21:00:37,195 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-21 21:00:37,201 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-21 21:00:37,207 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-21 21:00:37,213 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-21 21:00:37,219 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-21 21:00:37,225 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-21 21:00:37,231 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-21 21:00:37,237 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-21 21:00:37,243 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-21 21:00:37,249 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-21 21:00:37,256 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-21 21:00:37,262 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-21 21:00:37,268 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-21 21:00:37,274 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-21 21:00:37,280 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-21 21:00:37,285 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-21 21:00:37,292 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-21 21:00:37,297 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-21 21:00:37,303 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-21 21:00:37,310 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-21 21:00:37,316 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-21 21:00:37,322 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-21 21:00:37,345 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-21 21:00:38,700 - classification_pipeline - INFO - Dataset créé avec 54000 images (0 non trouvées)
+2025-07-21 22:03:49,142 - classification_pipeline - INFO - Création dataset X_test à partir de 13812 entrées...
+2025-07-21 22:03:49,791 - classification_pipeline - INFO - Dataset créé avec 13812 images (0 non trouvées)
+2025-07-21 22:18:25,053 - classification_pipeline - INFO - Création dataset X_test_split à partir de 16984 entrées...
+2025-07-21 22:18:26,417 - classification_pipeline - INFO - Dataset créé avec 16984 images (0 non trouvées)
+2025-07-21 22:35:30,302 - classification_pipeline - INFO - Sauvegarde des fichiers images...
+2025-07-21 22:35:33,157 - classification_pipeline - INFO - [_save_processed_data] Données sauvegardées dans :
+2025-07-21 22:35:33,158 - classification_pipeline - INFO -   - ./data/processed_data/X_train.npz
+2025-07-21 22:35:33,158 - classification_pipeline - INFO -   - ./data/processed_data/X_test.npz
+2025-07-21 22:35:33,158 - classification_pipeline - INFO -   - ./data/processed_data/X_test_split.npz
+2025-07-21 22:35:33,158 - classification_pipeline - INFO - Mise à jour de l'état...
+2025-07-21 22:35:33,324 - classification_pipeline - INFO - Début entraînement xgboost
+2025-07-22 00:02:27,044 - classification_pipeline - INFO - Entraînement terminé en 5213.72s
+2025-07-22 00:02:27,045 - classification_pipeline - INFO - Sauvegarde modèle xgboost en cours...
+2025-07-22 00:02:27,331 - classification_pipeline - INFO - Modèle xgboost sauvegardé dans ./data/models/xgboost
+2025-07-22 00:02:27,367 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 00:02:30,972 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 00:24:50,602 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 00:24:50,604 - classification_pipeline - ERROR - Erreur chargement données : 'arr_0 is not a file in the archive'
+2025-07-22 00:24:50,605 - classification_pipeline - ERROR - Erreur préparation données: 'arr_0 is not a file in the archive'
+2025-07-22 00:26:38,776 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 00:26:38,780 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 00:26:39,128 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 00:26:39,128 - classification_pipeline - ERROR - Erreur prédiction: 'NpzFile' object has no attribute 'shape'
+2025-07-22 00:35:03,372 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 00:35:05,859 - classification_pipeline - ERROR - Erreur chargement données : can only convert an array of size 1 to a Python scalar
+2025-07-22 00:35:05,859 - classification_pipeline - ERROR -   X_train: fichiers=['X_train_']
+2025-07-22 00:35:05,859 - classification_pipeline - ERROR -   y_train: fichiers=['y_train_']
+2025-07-22 00:35:05,859 - classification_pipeline - ERROR -   X_test: fichiers=['X_test']
+2025-07-22 00:35:05,859 - classification_pipeline - ERROR -   X_test_split: fichiers=['X_test_split']
+2025-07-22 00:35:05,860 - classification_pipeline - ERROR -   y_test_split: fichiers=['y_test_split']
+2025-07-22 00:35:05,860 - classification_pipeline - ERROR -   train_indices: fichiers=['train_indices']
+2025-07-22 00:35:05,860 - classification_pipeline - ERROR -   test_split_indices: fichiers=['test_split_indices']
+2025-07-22 00:35:05,860 - classification_pipeline - ERROR - Erreur préparation données: can only convert an array of size 1 to a Python scalar
+2025-07-22 00:37:46,271 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 00:37:48,937 - classification_pipeline - INFO - === EXTRACTION DES FEATURES ===
+2025-07-22 00:37:48,937 - classification_pipeline - INFO - Extraction de X_train: type=<class 'numpy.ndarray'>, shape=()
+2025-07-22 00:37:48,937 - classification_pipeline - INFO -   → Array 0D converti, type de l'item: <class 'dict'>
+2025-07-22 00:37:48,937 - classification_pipeline - INFO -   → Extraction via clé 'features' de l'item
+2025-07-22 00:37:48,937 - classification_pipeline - INFO - Extraction de X_test: type=<class 'numpy.ndarray'>, shape=()
+2025-07-22 00:37:48,938 - classification_pipeline - INFO -   → Array 0D converti, type de l'item: <class 'dict'>
+2025-07-22 00:37:48,938 - classification_pipeline - INFO -   → Extraction via clé 'features' de l'item
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - Extraction de X_test_split: type=<class 'numpy.ndarray'>, shape=(16984,)
+2025-07-22 00:37:48,938 - classification_pipeline - INFO -   → Array 1D, tentative de reshape
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - === RÉSULTATS FINAUX ===
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - X_train: <class 'numpy.ndarray'> shape=(54000, 2048)
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - y_train: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - X_test: <class 'numpy.ndarray'> shape=(16984, 2048)
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - X_test_split: <class 'numpy.ndarray'> shape=(16984,)
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - y_test_split: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 00:37:48,938 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 00:37:49,256 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 00:37:49,256 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 00:37:49,258 - classification_pipeline - ERROR - Erreur prédiction: Feature shape mismatch, expected: 2048, got 16984
+2025-07-22 00:37:49,258 - classification_pipeline - ERROR - Type de X reçu: <class 'numpy.ndarray'>
+2025-07-22 00:37:49,258 - classification_pipeline - ERROR - Shape de X: (1, 16984)
+2025-07-22 00:46:47,575 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 00:46:47,577 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-22 00:47:03,285 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 00:47:03,285 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-22 00:47:06,115 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-22 00:47:06,121 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-22 00:47:06,126 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-22 00:47:06,135 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-22 00:47:06,141 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-22 00:47:06,147 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-22 00:47:06,153 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-22 00:47:06,159 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-22 00:47:06,166 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-22 00:47:06,171 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-22 00:47:06,177 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-22 00:47:06,183 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-22 00:47:06,189 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-22 00:47:06,194 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-22 00:47:06,200 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-22 00:47:06,206 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-22 00:47:06,211 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-22 00:47:06,217 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-22 00:47:06,223 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-22 00:47:06,228 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-22 00:47:06,234 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-22 00:47:06,240 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-22 00:47:06,245 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-22 00:47:06,251 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-22 00:47:06,257 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-22 00:47:06,262 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-22 00:47:06,268 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-22 00:47:06,274 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-22 00:47:06,298 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-22 00:47:07,610 - classification_pipeline - INFO - Dataset créé avec 54000 images (0 non trouvées)
+2025-07-22 00:59:03,130 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 00:59:03,131 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-22 00:59:05,994 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-22 00:59:05,999 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-22 00:59:06,004 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-22 00:59:06,012 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-22 00:59:06,021 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-22 00:59:06,027 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-22 00:59:06,032 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-22 00:59:06,039 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-22 00:59:06,044 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-22 00:59:06,051 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-22 00:59:06,057 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-22 00:59:06,063 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-22 00:59:06,069 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-22 00:59:06,075 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-22 00:59:06,081 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-22 00:59:06,088 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-22 00:59:06,094 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-22 00:59:06,101 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-22 00:59:06,107 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-22 00:59:06,113 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-22 00:59:06,119 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-22 00:59:06,125 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-22 00:59:06,131 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-22 00:59:06,137 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-22 00:59:06,143 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-22 00:59:06,148 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-22 00:59:06,155 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-22 00:59:06,161 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-22 00:59:06,187 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-22 00:59:07,584 - classification_pipeline - INFO - Dataset créé avec 54000 images (0 non trouvées)
+2025-07-22 02:00:06,568 - classification_pipeline - INFO - Création dataset X_test à partir de 13812 entrées...
+2025-07-22 02:00:07,141 - classification_pipeline - INFO - Dataset créé avec 13812 images (0 non trouvées)
+2025-07-22 02:12:58,869 - classification_pipeline - INFO - Création dataset X_test_split à partir de 16984 entrées...
+2025-07-22 02:12:59,522 - classification_pipeline - INFO - Dataset créé avec 16984 images (0 non trouvées)
+2025-07-22 02:31:27,426 - classification_pipeline - INFO - Sauvegarde des fichiers images...
+2025-07-22 02:31:28,316 - classification_pipeline - INFO - [_save_processed_data] Données sauvegardées dans :
+2025-07-22 02:31:28,316 - classification_pipeline - INFO -   - ./data/processed_data/X_train.npz
+2025-07-22 02:31:28,316 - classification_pipeline - INFO -   - ./data/processed_data/X_test.npz
+2025-07-22 02:31:28,316 - classification_pipeline - INFO -   - ./data/processed_data/X_test_split.npz
+2025-07-22 02:31:28,316 - classification_pipeline - INFO - Mise à jour de l'état...
+2025-07-22 02:31:28,361 - classification_pipeline - INFO - Début entraînement xgboost
+2025-07-22 03:57:05,874 - classification_pipeline - INFO - Entraînement terminé en 5137.51s
+2025-07-22 03:57:05,875 - classification_pipeline - INFO - Sauvegarde modèle xgboost en cours...
+2025-07-22 03:57:06,221 - classification_pipeline - INFO - Modèle xgboost sauvegardé dans ./data/models/xgboost
+2025-07-22 03:57:06,221 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 03:57:09,559 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 09:11:57,962 - classification_pipeline - INFO - Début entraînement lightgbm
+2025-07-22 09:11:57,972 - classification_pipeline - ERROR - Erreur entraînement lightgbm: Type de modèle ML non supporté: lightgbm
+2025-07-22 09:17:57,999 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 09:18:02,083 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-22 09:18:02,089 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-22 09:18:02,095 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-22 09:18:02,103 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-22 09:18:02,109 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-22 09:18:02,115 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-22 09:18:02,120 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-22 09:18:02,126 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-22 09:18:02,132 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-22 09:18:02,138 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-22 09:18:02,145 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-22 09:18:02,152 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-22 09:18:02,158 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-22 09:18:02,165 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-22 09:18:02,172 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-22 09:18:02,179 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-22 09:18:02,185 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-22 09:18:02,191 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-22 09:18:02,197 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-22 09:18:02,203 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-22 09:18:02,208 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-22 09:18:02,215 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-22 09:18:02,221 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-22 09:18:02,228 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-22 09:18:02,235 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-22 09:18:02,243 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-22 09:18:02,249 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-22 09:18:02,256 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-22 09:18:02,279 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-22 09:18:37,921 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 09:18:40,836 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-22 09:18:40,842 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-22 09:18:40,847 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-22 09:18:40,855 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-22 09:18:40,862 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-22 09:18:40,868 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-22 09:18:40,875 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-22 09:18:40,882 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-22 09:18:40,888 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-22 09:18:40,895 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-22 09:18:40,901 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-22 09:18:40,907 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-22 09:18:40,913 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-22 09:18:40,919 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-22 09:18:40,925 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-22 09:18:40,931 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-22 09:18:40,937 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-22 09:18:40,943 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-22 09:18:40,949 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-22 09:18:40,955 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-22 09:18:40,961 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-22 09:18:40,967 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-22 09:18:40,973 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-22 09:18:40,980 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-22 09:18:40,985 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-22 09:18:40,991 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-22 09:18:40,998 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-22 09:18:41,003 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-22 09:18:41,028 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-22 09:18:42,390 - classification_pipeline - INFO - Dataset créé avec 54000 images (0 non trouvées)
+2025-07-22 09:19:11,564 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 09:19:13,232 - classification_pipeline - INFO - === EXTRACTION DES FEATURES ===
+2025-07-22 09:19:13,232 - classification_pipeline - INFO - Extraction de X_train: type=<class 'numpy.ndarray'>, shape=(54000, 2048)
+2025-07-22 09:19:13,232 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 09:19:13,232 - classification_pipeline - INFO - Extraction de X_test: type=<class 'numpy.ndarray'>, shape=(16984, 2048)
+2025-07-22 09:19:13,232 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 09:19:13,232 - classification_pipeline - INFO - Extraction de X_test_split: type=<class 'numpy.ndarray'>, shape=(16984,)
+2025-07-22 09:19:13,232 - classification_pipeline - INFO -   → Array 1D, tentative de reshape
+2025-07-22 09:19:13,232 - classification_pipeline - INFO - === RÉSULTATS FINAUX ===
+2025-07-22 09:19:13,232 - classification_pipeline - INFO - X_train: <class 'numpy.ndarray'> shape=(54000, 2048)
+2025-07-22 09:19:13,233 - classification_pipeline - INFO - y_train: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 09:19:13,233 - classification_pipeline - INFO - X_test: <class 'numpy.ndarray'> shape=(16984, 2048)
+2025-07-22 09:19:13,233 - classification_pipeline - INFO - X_test_split: <class 'numpy.ndarray'> shape=(16984,)
+2025-07-22 09:19:13,233 - classification_pipeline - INFO - y_test_split: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 09:19:13,233 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 09:19:13,561 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 09:19:13,561 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 09:19:13,562 - classification_pipeline - ERROR - Erreur prédiction: Feature shape mismatch, expected: 2048, got 16984
+2025-07-22 09:19:13,563 - classification_pipeline - ERROR - Type de X reçu: <class 'numpy.ndarray'>
+2025-07-22 09:19:13,563 - classification_pipeline - ERROR - Shape de X: (1, 16984)
+2025-07-22 09:33:41,265 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 09:33:42,945 - classification_pipeline - INFO - === EXTRACTION DES FEATURES ===
+2025-07-22 09:33:42,945 - classification_pipeline - INFO - Extraction de X_train: type=<class 'numpy.ndarray'>, shape=(54000, 2048)
+2025-07-22 09:33:42,946 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - Extraction de X_test: type=<class 'numpy.ndarray'>, shape=(16984, 2048)
+2025-07-22 09:33:42,946 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - Extraction de X_test_split: type=<class 'numpy.ndarray'>, shape=(16984,)
+2025-07-22 09:33:42,946 - classification_pipeline - INFO -   → Array 1D, tentative de reshape
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - === RÉSULTATS FINAUX ===
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - X_train: <class 'numpy.ndarray'> shape=(54000, 2048)
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - y_train: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - X_test: <class 'numpy.ndarray'> shape=(16984, 2048)
+2025-07-22 09:33:42,946 - classification_pipeline - INFO - X_test_split: <class 'numpy.ndarray'> shape=(16984,)
+2025-07-22 09:33:42,947 - classification_pipeline - INFO - y_test_split: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 09:33:42,947 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 09:33:43,287 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 09:33:43,287 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 09:33:43,290 - classification_pipeline - ERROR - Erreur prédiction: Feature shape mismatch, expected: 2048, got 16984
+2025-07-22 09:33:43,291 - classification_pipeline - ERROR - Type de X reçu: <class 'numpy.ndarray'>
+2025-07-22 09:33:43,291 - classification_pipeline - ERROR - Shape de X: (1, 16984)
+2025-07-22 09:45:08,485 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 09:45:08,488 - classification_pipeline - WARNING - Les fichiers suivants sont manquants : X_train, y_train, X_test, X_test_split, y_test_split, train_indices, test_split_indices
+2025-07-22 09:45:11,840 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-22 09:45:11,848 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-22 09:45:11,858 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-22 09:45:11,867 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-22 09:45:11,875 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-22 09:45:11,881 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-22 09:45:11,890 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-22 09:45:11,896 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-22 09:45:11,904 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-22 09:45:11,910 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-22 09:45:11,918 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-22 09:45:11,925 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-22 09:45:11,931 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-22 09:45:11,937 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-22 09:45:11,943 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-22 09:45:11,949 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-22 09:45:11,956 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-22 09:45:11,962 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-22 09:45:11,968 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-22 09:45:11,974 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-22 09:45:11,980 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-22 09:45:11,987 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-22 09:45:11,994 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-22 09:45:12,001 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-22 09:45:12,008 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-22 09:45:12,015 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-22 09:45:12,022 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-22 09:45:12,029 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-22 09:45:12,055 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-22 09:45:13,527 - classification_pipeline - INFO - Dataset créé avec 54000 images (0 non trouvées)
+2025-07-22 10:47:53,023 - classification_pipeline - INFO - Création dataset X_test à partir de 13812 entrées...
+2025-07-22 10:47:54,627 - classification_pipeline - INFO - Dataset créé avec 13812 images (0 non trouvées)
+2025-07-22 11:00:16,858 - classification_pipeline - INFO - Création dataset X_test_split à partir de 16984 entrées...
+2025-07-22 11:00:18,399 - classification_pipeline - INFO - Dataset créé avec 16984 images (0 non trouvées)
+2025-07-22 11:19:18,710 - classification_pipeline - INFO - Sauvegarde des fichiers images...
+2025-07-22 11:19:19,734 - classification_pipeline - INFO - [_save_processed_data] Données sauvegardées dans :
+2025-07-22 11:19:19,734 - classification_pipeline - INFO -   - ./data/processed_data/X_train.npz
+2025-07-22 11:19:19,734 - classification_pipeline - INFO -   - ./data/processed_data/X_test.npz
+2025-07-22 11:19:19,734 - classification_pipeline - INFO -   - ./data/processed_data/X_test_split.npz
+2025-07-22 11:19:19,734 - classification_pipeline - INFO - Mise à jour de l'état...
+2025-07-22 11:19:20,167 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 11:19:20,169 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 11:19:23,545 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 11:19:27,951 - classification_pipeline - INFO - Début entraînement deep learning
+2025-07-22 11:19:55,477 - classification_pipeline - INFO - Epoch 1: Train Loss = 3.9773, Val Loss = 1.6409, Val F1 = 0.5536
+2025-07-22 11:20:21,693 - classification_pipeline - INFO - Epoch 2: Train Loss = 2.0245, Val Loss = 1.4017, Val F1 = 0.5911
+2025-07-22 11:20:47,717 - classification_pipeline - INFO - Epoch 3: Train Loss = 1.5906, Val Loss = 1.3202, Val F1 = 0.6027
+2025-07-22 11:21:15,328 - classification_pipeline - INFO - Epoch 4: Train Loss = 1.4477, Val Loss = 1.3277, Val F1 = 0.5875
+2025-07-22 11:21:41,037 - classification_pipeline - INFO - Epoch 5: Train Loss = 1.4278, Val Loss = 1.3739, Val F1 = 0.5983
+2025-07-22 11:22:06,793 - classification_pipeline - INFO - Epoch 6: Train Loss = 1.4825, Val Loss = 1.4252, Val F1 = 0.5923
+2025-07-22 11:22:32,408 - classification_pipeline - INFO - Epoch 7: Train Loss = 1.5181, Val Loss = 1.4260, Val F1 = 0.5958
+2025-07-22 11:22:59,154 - classification_pipeline - INFO - Epoch 8: Train Loss = 1.5292, Val Loss = 1.4242, Val F1 = 0.5921
+2025-07-22 11:23:25,297 - classification_pipeline - INFO - Epoch 9: Train Loss = 1.5179, Val Loss = 1.3932, Val F1 = 0.6100
+2025-07-22 11:23:51,614 - classification_pipeline - INFO - Epoch 10: Train Loss = 1.4913, Val Loss = 1.3629, Val F1 = 0.6143
+2025-07-22 11:24:17,689 - classification_pipeline - INFO - Epoch 11: Train Loss = 1.4669, Val Loss = 1.3434, Val F1 = 0.6230
+2025-07-22 11:24:44,016 - classification_pipeline - INFO - Epoch 12: Train Loss = 1.4446, Val Loss = 1.3403, Val F1 = 0.6283
+2025-07-22 11:25:10,027 - classification_pipeline - INFO - Epoch 13: Train Loss = 1.4259, Val Loss = 1.3030, Val F1 = 0.6312
+2025-07-22 11:25:37,547 - classification_pipeline - INFO - Epoch 14: Train Loss = 1.4237, Val Loss = 1.3115, Val F1 = 0.6359
+2025-07-22 11:26:03,685 - classification_pipeline - INFO - Epoch 15: Train Loss = 1.4075, Val Loss = 1.2937, Val F1 = 0.6429
+2025-07-22 11:26:29,736 - classification_pipeline - INFO - Epoch 16: Train Loss = 1.3930, Val Loss = 1.2822, Val F1 = 0.6369
+2025-07-22 11:26:55,521 - classification_pipeline - INFO - Epoch 17: Train Loss = 1.3925, Val Loss = 1.2922, Val F1 = 0.6408
+2025-07-22 11:27:20,874 - classification_pipeline - INFO - Epoch 18: Train Loss = 1.3878, Val Loss = 1.2738, Val F1 = 0.6452
+2025-07-22 11:27:46,805 - classification_pipeline - INFO - Epoch 19: Train Loss = 1.3782, Val Loss = 1.2792, Val F1 = 0.6431
+2025-07-22 11:28:12,283 - classification_pipeline - INFO - Epoch 20: Train Loss = 1.3722, Val Loss = 1.2695, Val F1 = 0.6384
+2025-07-22 11:28:37,719 - classification_pipeline - INFO - Epoch 21: Train Loss = 1.3710, Val Loss = 1.2658, Val F1 = 0.6450
+2025-07-22 11:29:02,936 - classification_pipeline - INFO - Epoch 22: Train Loss = 1.3627, Val Loss = 1.2501, Val F1 = 0.6519
+2025-07-22 11:29:28,140 - classification_pipeline - INFO - Epoch 23: Train Loss = 1.3631, Val Loss = 1.2583, Val F1 = 0.6442
+2025-07-22 11:29:54,102 - classification_pipeline - INFO - Epoch 24: Train Loss = 1.3585, Val Loss = 1.2569, Val F1 = 0.6579
+2025-07-22 11:30:20,330 - classification_pipeline - INFO - Epoch 25: Train Loss = 1.3594, Val Loss = 1.2616, Val F1 = 0.6454
+2025-07-22 11:30:46,364 - classification_pipeline - INFO - Epoch 26: Train Loss = 1.3560, Val Loss = 1.2584, Val F1 = 0.6472
+2025-07-22 11:31:13,469 - classification_pipeline - INFO - Epoch 27: Train Loss = 1.3543, Val Loss = 1.2382, Val F1 = 0.6530
+2025-07-22 11:31:41,436 - classification_pipeline - INFO - Epoch 28: Train Loss = 1.3464, Val Loss = 1.2434, Val F1 = 0.6551
+2025-07-22 11:32:08,172 - classification_pipeline - INFO - Epoch 29: Train Loss = 1.3528, Val Loss = 1.2466, Val F1 = 0.6492
+2025-07-22 11:32:36,027 - classification_pipeline - INFO - Epoch 30: Train Loss = 1.3444, Val Loss = 1.2481, Val F1 = 0.6489
+2025-07-22 11:33:02,999 - classification_pipeline - INFO - Epoch 31: Train Loss = 1.2143, Val Loss = 1.1455, Val F1 = 0.6755
+2025-07-22 11:33:33,326 - classification_pipeline - INFO - Epoch 32: Train Loss = 1.1574, Val Loss = 1.1267, Val F1 = 0.6832
+2025-07-22 11:33:58,980 - classification_pipeline - INFO - Epoch 33: Train Loss = 1.1313, Val Loss = 1.1251, Val F1 = 0.6833
+2025-07-22 11:34:26,403 - classification_pipeline - INFO - Epoch 34: Train Loss = 1.1091, Val Loss = 1.1292, Val F1 = 0.6785
+2025-07-22 11:34:53,618 - classification_pipeline - INFO - Epoch 35: Train Loss = 1.0826, Val Loss = 1.1170, Val F1 = 0.6839
+2025-07-22 11:35:20,379 - classification_pipeline - INFO - Epoch 36: Train Loss = 1.0798, Val Loss = 1.1113, Val F1 = 0.6880
+2025-07-22 11:35:46,674 - classification_pipeline - INFO - Epoch 37: Train Loss = 1.0611, Val Loss = 1.0992, Val F1 = 0.6871
+2025-07-22 11:36:13,405 - classification_pipeline - INFO - Epoch 38: Train Loss = 1.0518, Val Loss = 1.0955, Val F1 = 0.6916
+2025-07-22 11:36:41,063 - classification_pipeline - INFO - Epoch 39: Train Loss = 1.0369, Val Loss = 1.1018, Val F1 = 0.6846
+2025-07-22 11:37:08,034 - classification_pipeline - INFO - Epoch 40: Train Loss = 1.0312, Val Loss = 1.1139, Val F1 = 0.6879
+2025-07-22 11:37:34,425 - classification_pipeline - INFO - Epoch 41: Train Loss = 1.0199, Val Loss = 1.0855, Val F1 = 0.6970
+2025-07-22 11:38:01,999 - classification_pipeline - INFO - Epoch 42: Train Loss = 1.0109, Val Loss = 1.0857, Val F1 = 0.6910
+2025-07-22 11:38:28,635 - classification_pipeline - INFO - Epoch 43: Train Loss = 1.0109, Val Loss = 1.0973, Val F1 = 0.6885
+2025-07-22 11:38:54,966 - classification_pipeline - INFO - Epoch 44: Train Loss = 1.0019, Val Loss = 1.0958, Val F1 = 0.6915
+2025-07-22 11:39:20,425 - classification_pipeline - INFO - Epoch 45: Train Loss = 0.9911, Val Loss = 1.0892, Val F1 = 0.6971
+2025-07-22 11:39:45,632 - classification_pipeline - INFO - Epoch 46: Train Loss = 0.9943, Val Loss = 1.1026, Val F1 = 0.6901
+2025-07-22 11:40:11,387 - classification_pipeline - INFO - Epoch 47: Train Loss = 0.9866, Val Loss = 1.1074, Val F1 = 0.6844
+2025-07-22 11:40:36,752 - classification_pipeline - INFO - Epoch 48: Train Loss = 0.8745, Val Loss = 1.0450, Val F1 = 0.7035
+2025-07-22 11:41:02,162 - classification_pipeline - INFO - Epoch 49: Train Loss = 0.8156, Val Loss = 1.0271, Val F1 = 0.7060
+2025-07-22 11:41:27,583 - classification_pipeline - INFO - Epoch 50: Train Loss = 0.7938, Val Loss = 1.0366, Val F1 = 0.7066
+2025-07-22 11:41:53,289 - classification_pipeline - INFO - Epoch 51: Train Loss = 0.7762, Val Loss = 1.0306, Val F1 = 0.7025
+2025-07-22 11:42:19,345 - classification_pipeline - INFO - Epoch 52: Train Loss = 0.7637, Val Loss = 1.0397, Val F1 = 0.7061
+2025-07-22 11:42:45,313 - classification_pipeline - INFO - Epoch 53: Train Loss = 0.7506, Val Loss = 1.0390, Val F1 = 0.7037
+2025-07-22 11:43:11,064 - classification_pipeline - INFO - Epoch 54: Train Loss = 0.7319, Val Loss = 1.0402, Val F1 = 0.7012
+2025-07-22 11:43:36,902 - classification_pipeline - INFO - Epoch 55: Train Loss = 0.7329, Val Loss = 1.0445, Val F1 = 0.7092
+2025-07-22 11:44:03,067 - classification_pipeline - INFO - Epoch 56: Train Loss = 0.7200, Val Loss = 1.0381, Val F1 = 0.7047
+2025-07-22 11:44:28,437 - classification_pipeline - INFO - Epoch 57: Train Loss = 0.7129, Val Loss = 1.0317, Val F1 = 0.7019
+2025-07-22 11:44:54,857 - classification_pipeline - INFO - Epoch 58: Train Loss = 0.7063, Val Loss = 1.0321, Val F1 = 0.7049
+2025-07-22 11:45:21,066 - classification_pipeline - INFO - Epoch 59: Train Loss = 0.6946, Val Loss = 1.0303, Val F1 = 0.7050
+2025-07-22 11:45:47,119 - classification_pipeline - INFO - Epoch 60: Train Loss = 0.6928, Val Loss = 1.0376, Val F1 = 0.7012
+2025-07-22 11:45:47,121 - classification_pipeline - INFO - Entraînement terminé en 1579.17s
+2025-07-22 11:45:47,310 - classification_pipeline - INFO - Sauvegarde modèle neural_net en cours...
+2025-07-22 11:45:47,349 - classification_pipeline - INFO - Modèle neural_net sauvegardé dans ./data/models/neural_net
+2025-07-22 11:57:34,561 - classification_pipeline - INFO - Prétraitement en cours...
+2025-07-22 11:57:37,490 - classification_pipeline - INFO - Indices retenus: 54000 sur 67932 images
+2025-07-22 11:57:37,496 - classification_pipeline - INFO - Classe 1320 (Puériculture): 2000 images
+2025-07-22 11:57:37,501 - classification_pipeline - INFO - Classe 10 (Livres occasion): 2000 images
+2025-07-22 11:57:37,510 - classification_pipeline - INFO - Classe 1560 (Mobilier): 2000 images
+2025-07-22 11:57:37,516 - classification_pipeline - INFO - Classe 1280 (Jouets enfant): 2000 images
+2025-07-22 11:57:37,524 - classification_pipeline - INFO - Classe 2220 (Animalerie): 2000 images
+2025-07-22 11:57:37,530 - classification_pipeline - INFO - Classe 1920 (Linge de maison): 2000 images
+2025-07-22 11:57:37,536 - classification_pipeline - INFO - Classe 60 (Consoles de jeux): 2000 images
+2025-07-22 11:57:37,543 - classification_pipeline - INFO - Classe 2583 (Piscine et accessoires): 2000 images
+2025-07-22 11:57:37,548 - classification_pipeline - INFO - Classe 2280 (Journaux et revues occasion): 2000 images
+2025-07-22 11:57:37,555 - classification_pipeline - INFO - Classe 1160 (Cartes de jeux): 2000 images
+2025-07-22 11:57:37,561 - classification_pipeline - INFO - Classe 1302 (Jeux et accessoires de plein air): 2000 images
+2025-07-22 11:57:37,567 - classification_pipeline - INFO - Classe 2585 (Outillage de jardin): 2000 images
+2025-07-22 11:57:37,573 - classification_pipeline - INFO - Classe 2403 (Lots livres et magazines): 2000 images
+2025-07-22 11:57:37,579 - classification_pipeline - INFO - Classe 1140 (Objets pop culture): 2000 images
+2025-07-22 11:57:37,585 - classification_pipeline - INFO - Classe 1300 (Modélisme): 2000 images
+2025-07-22 11:57:37,591 - classification_pipeline - INFO - Classe 2060 (Décoration): 2000 images
+2025-07-22 11:57:37,596 - classification_pipeline - INFO - Classe 2522 (Fournitures papeterie): 2000 images
+2025-07-22 11:57:37,602 - classification_pipeline - INFO - Classe 2582 (Mobilier et accessoires de jardin): 2000 images
+2025-07-22 11:57:37,608 - classification_pipeline - INFO - Classe 2905 (Jeux PC en téléchargement): 2000 images
+2025-07-22 11:57:37,613 - classification_pipeline - INFO - Classe 1940 (Épicerie): 2000 images
+2025-07-22 11:57:37,619 - classification_pipeline - INFO - Classe 2705 (Livres neufs): 2000 images
+2025-07-22 11:57:37,625 - classification_pipeline - INFO - Classe 40 (Jeux consoles neuf): 2000 images
+2025-07-22 11:57:37,631 - classification_pipeline - INFO - Classe 1180 (Jeux de rôle et figurines): 2000 images
+2025-07-22 11:57:37,638 - classification_pipeline - INFO - Classe 2462 (Console et Jeux vidéos occasion): 2000 images
+2025-07-22 11:57:37,643 - classification_pipeline - INFO - Classe 1301 (Lingerie enfant et jeu de bar): 2000 images
+2025-07-22 11:57:37,650 - classification_pipeline - INFO - Classe 1281 (Jeux enfant): 2000 images
+2025-07-22 11:57:37,655 - classification_pipeline - INFO - Classe 50 (Accessoires gaming): 2000 images
+2025-07-22 11:57:37,679 - classification_pipeline - INFO - Création dataset X_train à partir de 54000 entrées...
+2025-07-22 11:57:39,002 - classification_pipeline - INFO - Dataset créé avec 54000 images (0 non trouvées)
+2025-07-22 11:57:57,897 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 11:57:59,447 - classification_pipeline - INFO - === EXTRACTION DES FEATURES ===
+2025-07-22 11:57:59,447 - classification_pipeline - INFO - Extraction de X_train: type=<class 'numpy.ndarray'>, shape=(54000, 2048)
+2025-07-22 11:57:59,447 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 11:57:59,447 - classification_pipeline - INFO - Extraction de X_test: type=<class 'numpy.ndarray'>, shape=(13812, 2048)
+2025-07-22 11:57:59,447 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 11:57:59,447 - classification_pipeline - INFO - Extraction de X_test_split: type=<class 'numpy.ndarray'>, shape=(16984, 2048)
+2025-07-22 11:57:59,447 - classification_pipeline - INFO -   → Array 2D, utilisation directe
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - === RÉSULTATS FINAUX ===
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - X_train: <class 'numpy.ndarray'> shape=(54000, 2048)
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - y_train: <class 'numpy.ndarray'> shape=(54000,)
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - X_test: <class 'numpy.ndarray'> shape=(13812, 2048)
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - X_test_split: <class 'numpy.ndarray'> shape=(16984, 2048)
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - y_test_split: <class 'numpy.ndarray'> shape=(16984,)
+2025-07-22 11:57:59,448 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 11:57:59,735 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 11:57:59,736 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 11:58:02,790 - classification_pipeline - INFO - Prédiction avec modèle ML
+2025-07-22 11:58:06,593 - classification_pipeline - INFO - Modèle neural_net chargé depuis ./data/models/neural_net

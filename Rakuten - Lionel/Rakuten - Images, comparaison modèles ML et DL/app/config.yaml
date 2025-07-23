@@ -3,8 +3,8 @@ data_path: "./data"
 model_path: "./data/models"
 image_dir: "./data/images"
 
-batch_size: 32
-target_size: 2000
-random_state: 42
-num_workers: -1
-early_stopping_patience: 5
+# batch_size: 32
+# target_size: 2000
+# random_state: 42
+# num_workers: 0
+# early_stopping_patience: 5

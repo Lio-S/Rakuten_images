@@ -5,6 +5,7 @@ scikit-learn==1.2.2
 matplotlib==3.6.2
 Pillow==9.4.0
 seaborn==0.13.2
+streamlit==1.46.0
 
 # PyTorch ecosystem - versions avec auto-détection CPU/GPU
 torch==2.0.1

@@ -25,7 +25,8 @@ def load_model_configs():
             configs = yaml.safe_load(f)
         
         # Vérification de la présence de tous les modèles attendus
-        expected_models = {'xgboost', 'lightgbm', 'catboost', 'neural_net'}
+        # expected_models = {'xgboost', 'lightgbm', 'catboost', 'neural_net'}
+        expected_models = {'xgboost','neural_net'}
         missing_models = expected_models - set(configs.keys())
         
         if missing_models:
@@ -39,7 +40,7 @@ def load_model_configs():
 
 if __name__ == "__main__":
     # Forcer le prétraitement des données ou les télécharger si souhaité
-    force_preprocess = False # Mettre à True pour forcer le preprocesing des données
+    force_preprocess = False # Mettre à True pour forcer le preprocessing des données
     if force_preprocess == False and not os.path.exists(fichier_donnees_pretraitees):        
         # Appel de la fonction pour télécharger + extraire
         telecharger_et_extraire_zip(
@@ -65,6 +66,8 @@ if __name__ == "__main__":
     # Initialisation des dictionnaires pour stocker tous les résultats
     all_results = {}
     
+    evalute = True #Forcer l'évaluation (Maj des résultats)
+
     for model_name, params in models_to_test.items():
         print(f"\nTraitement  de {model_name}")
     
@@ -99,7 +102,6 @@ if __name__ == "__main__":
         if os.path.exists(file_path_erreurs):
             print(f"Le fichier erreurs {model_name} existe.")
             
-        evalute = True #Forcer l'évaluation (Maj des résultats)
         plot = False   #Pour ne pas afficher le graphe de distribution des prédictions déjà généré
         if not os.path.exists(file_path_erreurs) or not os.path.exists(file_path_rapport) or evalute==True:    
             # Prévisions et Évaluation

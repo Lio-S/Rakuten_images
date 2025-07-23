@@ -120,18 +120,33 @@ class ProductClassificationPipeline:
     def _init_categories(self):
         """Initialise le mapping des catégories Rakuten"""
         self.category_names = {
-            10: "Livres", 2280: "Jeux vidéo", 50: "Jouets & Jeux",
-            1280: "Accessoires téléphones", 2705: "Accessoires console",
-            2522: "Équipement bébé", 2582: "Matériel & accessoires",
-            1560: "Photos", 1281: "Téléphonie fixe",
-            1920: "Musique amplifiée", 2403: "Livres en langues étrangères",
-            1140: "TV", 2583: "Articles sport", 1180: "Décoration",
-            1300: "Jeux vidéo ancien", 2462: "Fournitures bureau",
-            1160: "Électroménager", 2060: "Articles soins",
-            40: "DVD & Films", 60: "Consoles", 1320: "CD",
-            1302: "Jeux vidéo rétro", 2220: "Puériculture",
-            2905: "Instruments musique", 2585: "Sports & Loisirs",
-            1940: "Instrument musique", 1301: "Consoles rétro"
+                                10: "Livres occasion",
+                                40: "Jeux consoles neuf", 
+                                50: "Accessoires gaming",
+                                60: "Consoles de jeux",
+                                1140: "Objets pop culture",
+                                1160: "Cartes de jeux",
+                                1180: "Jeux de rôle et figurines",
+                                1280: "Jouets enfant",
+                                1300: "Modélisme",
+                                1281: "Jeux enfant", 
+                                1301: "Lingerie enfant et jeu de bar",
+                                1302: "Jeux et accessoires de plein air",
+                                1320: "Puériculture",
+                                1560: "Mobilier",
+                                1920: "Linge de maison",
+                                1940: "Épicerie",
+                                2060: "Décoration",
+                                2220: "Animalerie",
+                                2280: "Journaux et revues occasion",
+                                2403: "Lots livres et magazines",
+                                2462: "Console et Jeux vidéos occasion",
+                                2522: "Fournitures papeterie",
+                                2582: "Mobilier et accessoires de jardin",
+                                2583: "Piscine et accessoires",
+                                2585: "Outillage de jardin",
+                                2705: "Livres neufs",
+                                2905: "Jeux PC en téléchargement"
         }
         # Créer le mapping vers des indices consécutifs
         self.category_to_idx = {code: idx for idx, code in enumerate(sorted(self.category_names.keys()))}

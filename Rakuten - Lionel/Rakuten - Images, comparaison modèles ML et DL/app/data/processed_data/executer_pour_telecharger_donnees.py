@@ -4,7 +4,7 @@ import requests
 import zipfile
 import os
 
-def download_adownload_processed_filesnd_extract_zip(url, output_zip="Preprocessed_data.zip", extract_dir="."):
+def telecharger_et_extraire_zip(url, output_zip="Preprocessed_data.zip", extract_dir="."):
     """
     Télécharge un fichier ZIP depuis `url` et l'extrait dans `extract_dir`.
     """

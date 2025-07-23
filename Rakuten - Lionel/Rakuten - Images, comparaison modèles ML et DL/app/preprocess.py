@@ -12,8 +12,8 @@ from dataclasses import dataclass, fields
 
 # Imports machine learning
 import xgboost as xgb
-from lightgbm import LGBMClassifier
-from catboost import CatBoostClassifier
+# from lightgbm import LGBMClassifier
+# from catboost import CatBoostClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score
@@ -104,7 +104,7 @@ class PipelineConfig:
     batch_size: int = 128
     target_size: int = 2000
     random_state: int = 42
-    num_workers: Optional[int] = 7
+    num_workers: Optional[int] = 14
     early_stopping_patience: int = 5
 
     @classmethod
@@ -151,22 +151,83 @@ class ProductClassificationPipeline:
     def _init_categories(self):
         """Initialise le mapping des catégories Rakuten"""
         self.category_names = {
-            10: "Livres", 2280: "Jeux vidéo", 50: "Jouets & Jeux",
-            1280: "Accessoires téléphones", 2705: "Accessoires console",
-            2522: "Équipement bébé", 2582: "Matériel & accessoires",
-            1560: "Photos", 1281: "Téléphonie fixe",
-            1920: "Musique amplifiée", 2403: "Livres en langues étrangères",
-            1140: "TV", 2583: "Articles sport", 1180: "Décoration",
-            1300: "Jeux vidéo ancien", 2462: "Fournitures bureau",
-            1160: "Électroménager", 2060: "Articles soins",
-            40: "DVD & Films", 60: "Consoles", 1320: "CD",
-            1302: "Jeux vidéo rétro", 2220: "Puériculture",
-            2905: "Instruments musique", 2585: "Sports & Loisirs",
-            1940: "Instrument musique", 1301: "Consoles rétro"
+                                10: "Livres occasion",
+                                40: "Jeux consoles neuf", 
+                                50: "Accessoires gaming",
+                                60: "Consoles de jeux",
+                                1140: "Objets pop culture",
+                                1160: "Cartes de jeux",
+                                1180: "Jeux de rôle et figurines",
+                                1280: "Jouets enfant",
+                                1300: "Modélisme",
+                                1281: "Jeux enfant", 
+                                1301: "Lingerie enfant et jeu de bar",
+                                1302: "Jeux et accessoires de plein air",
+                                1320: "Puériculture",
+                                1560: "Mobilier",
+                                1920: "Linge de maison",
+                                1940: "Épicerie",
+                                2060: "Décoration",
+                                2220: "Animalerie",
+                                2280: "Journaux et revues occasion",
+                                2403: "Lots livres et magazines",
+                                2462: "Console et Jeux vidéos occasion",
+                                2522: "Fournitures papeterie",
+                                2582: "Mobilier et accessoires de jardin",
+                                2583: "Piscine et accessoires",
+                                2585: "Outillage de jardin",
+                                2705: "Livres neufs",
+                                2905: "Jeux PC en téléchargement"
         }
         # Créer le mapping vers des indices consécutifs
         self.category_to_idx = {code: idx for idx, code in enumerate(sorted(self.category_names.keys()))}
         self.idx_to_category = {idx: code for code, idx in self.category_to_idx.items()}
+
+    # def _clean_category_codes(self, df, column_name='prdtypecode'):
+    #     """
+    #     Nettoie les codes de catégorie en supprimant les 0 supplémentaires
+        
+    #     Args:
+    #         df: DataFrame contenant les codes
+    #         column_name: Nom de la colonne contenant les codes
+            
+    #     Returns:
+    #         DataFrame avec codes nettoyés
+    #     """
+    #     original_codes = sorted(df[column_name].unique())
+    #     self.logger.info(f"Codes originaux: {original_codes}")
+        
+    #     # Correction : supprimer le 0 final pour les codes qui se terminent par 0
+    #     # et qui ne sont pas des codes valides
+    #     def clean_code(code):
+    #         str_code = str(code)
+    #         # Si le code se termine par 0 et n'est pas dans nos catégories valides
+    #         if str_code.endswith('0') and int(code) not in self.category_names:
+    #             # Supprimer le dernier 0
+    #             cleaned = int(str_code[:-1])
+    #             # Vérifier que le code nettoyé existe dans nos catégories
+    #             if cleaned in self.category_names:
+    #                 return cleaned
+    #         return code
+        
+    #     # Appliquer le nettoyage
+    #     df[column_name] = df[column_name].apply(clean_code)
+        
+    #     cleaned_codes = sorted(df[column_name].unique())
+    #     self.logger.info(f"Codes après nettoyage: {cleaned_codes}")
+        
+    #     # Vérifier les codes invalides restants
+    #     invalid_codes = set(df[column_name].unique()) - set(self.category_names.keys())
+    #     if invalid_codes:
+    #         self.logger.warning(f"Codes invalides restants: {invalid_codes}")
+    #         # Filtrer les lignes avec des codes invalides
+    #         valid_mask = df[column_name].isin(self.category_names.keys())
+    #         removed_count = len(df) - valid_mask.sum()
+    #         if removed_count > 0:
+    #             self.logger.warning(f"Suppression de {removed_count} lignes avec codes invalides")
+    #         df = df[valid_mask].copy()
+        
+    #     return df
 
     def _init_paths(self):
         """Initialise tous les chemins nécessaires"""
@@ -210,7 +271,8 @@ class ProductClassificationPipeline:
         image_paths = []
         images_not_found = 0
         try:
-            self.logger.info(f"Création dataset à partir de {len(df_name)} entrées...")
+            # self.logger.info(f"Création dataset à partir de {len(df_name)} entrées...")
+            self.logger.info(f"Création dataset {df_name} à partir de {len(df)} entrées...")
             try:
                 match df_name:
                     case "X_train": df_path = self.train_image_dir
@@ -396,17 +458,104 @@ class ProductClassificationPipeline:
         """
         try:
             # 1) Train
-            X_train = np.load(required_files['X_train'], allow_pickle=True)['arr_0']
-            y_train = np.load(required_files['y_train'], allow_pickle=True)['arr_0']
-            train_indices = np.load(required_files['train_indices'], allow_pickle=True)['arr_0']
+            X_train_npz = np.load(required_files['X_train'], allow_pickle=True)
+            y_train_npz = np.load(required_files['y_train'], allow_pickle=True)
+            train_indices_npz = np.load(required_files['train_indices'], allow_pickle=True)
+            
+            # Extraction des données - gérer les différents formats de sauvegarde
+            X_train = X_train_npz['X_train_'] if 'X_train_' in X_train_npz.files else X_train_npz['arr_0']
+            y_train = y_train_npz['y_train_'] if 'y_train_' in y_train_npz.files else y_train_npz['arr_0']
+            train_indices = train_indices_npz['train_indices'] if 'train_indices' in train_indices_npz.files else train_indices_npz['arr_0']
             
             # 2) Test
-            X_test = np.load(required_files['X_test'], allow_pickle=True)['arr_0']
+            X_test_npz = np.load(required_files['X_test'], allow_pickle=True)
+            X_test = X_test_npz['X_test'] if 'X_test' in X_test_npz.files else X_test_npz['arr_0']
             
             # 3) Test_split
-            X_test_split = np.load(required_files['X_test_split'], allow_pickle=True)['arr_0']
-            y_test_split = np.load(required_files['y_test_split'], allow_pickle=True)['arr_0']
-            test_split_indices = np.load(required_files['test_split_indices'], allow_pickle=True)['arr_0']
+            X_test_split_npz = np.load(required_files['X_test_split'], allow_pickle=True)
+            y_test_split_npz = np.load(required_files['y_test_split'], allow_pickle=True)
+            test_split_indices_npz = np.load(required_files['test_split_indices'], allow_pickle=True)
+            
+            X_test_split = X_test_split_npz['X_test_split'] if 'X_test_split' in X_test_split_npz.files else X_test_split_npz['arr_0']
+            y_test_split = y_test_split_npz['y_test_split'] if 'y_test_split' in y_test_split_npz.files else y_test_split_npz['arr_0']
+            test_split_indices = test_split_indices_npz['test_split_indices'] if 'test_split_indices' in test_split_indices_npz.files else test_split_indices_npz['arr_0']
+            
+            # Fermeture des fichiers npz
+            X_train_npz.close()
+            y_train_npz.close()
+            train_indices_npz.close()
+            X_test_npz.close()
+            X_test_split_npz.close()
+            y_test_split_npz.close()
+            test_split_indices_npz.close()
+            
+            # Extraction robuste des features
+            def extract_features_safe(data, data_name=""):
+                """Extrait les features des données selon leur format - version sécurisée"""
+                self.logger.info(f"Extraction de {data_name}: type={type(data)}, shape={getattr(data, 'shape', 'N/A')}")
+                
+                try:
+                    # Cas 1: Dictionnaire direct
+                    if isinstance(data, dict):
+                        if 'features' in data:
+                            self.logger.info(f"  → Extraction via clé 'features'")
+                            return data['features']
+                        else:
+                            self.logger.info(f"  → Dictionnaire sans 'features', clés: {list(data.keys())}")
+                            return data
+                    
+                    # Cas 2: Array 0D contenant un objet (ATTENTION au .item())
+                    elif isinstance(data, np.ndarray) and data.shape == ():
+                        try:
+                            item = data.item()
+                            self.logger.info(f"  → Array 0D converti, type de l'item: {type(item)}")
+                            
+                            if isinstance(item, dict) and 'features' in item:
+                                self.logger.info(f"  → Extraction via clé 'features' de l'item")
+                                return item['features']
+                            else:
+                                return item
+                        except ValueError as e:
+                            self.logger.warning(f"  → Échec .item(): {e}, retour direct")
+                            return data
+                    
+                    # Cas 3: Array numpy classique
+                    elif isinstance(data, np.ndarray):
+                        if data.ndim >= 2:  # Array 2D ou plus = probablement les features directement
+                            self.logger.info(f"  → Array {data.ndim}D, utilisation directe")
+                            return data
+                        else:
+                            self.logger.info(f"  → Array 1D, tentative de reshape")
+                            return data
+                    
+                    # Cas 4: Autres types
+                    else:
+                        self.logger.info(f"  → Type non géré spécifiquement, retour direct")
+                        return data
+                        
+                except Exception as e:
+                    self.logger.error(f"  → Erreur extraction {data_name}: {e}")
+                    return data
+            
+            # Application de l'extraction sécurisée
+            self.logger.info("=== EXTRACTION DES FEATURES ===")
+            X_train = extract_features_safe(X_train, "X_train")
+            X_test = extract_features_safe(X_test, "X_test")
+            X_test_split = extract_features_safe(X_test_split, "X_test_split")
+            
+            # Log des informations finales
+            self.logger.info("=== RÉSULTATS FINAUX ===")
+            self.logger.info(f"X_train: {type(X_train)} shape={getattr(X_train, 'shape', 'N/A')}")
+            self.logger.info(f"y_train: {type(y_train)} shape={getattr(y_train, 'shape', 'N/A')}")
+            self.logger.info(f"X_test: {type(X_test)} shape={getattr(X_test, 'shape', 'N/A')}")
+            self.logger.info(f"X_test_split: {type(X_test_split)} shape={getattr(X_test_split, 'shape', 'N/A')}")
+            self.logger.info(f"y_test_split: {type(y_test_split)} shape={getattr(y_test_split, 'shape', 'N/A')}")
+            
+            # Vérifications supplémentaires
+            if hasattr(X_train, 'shape') and len(X_train.shape) == 0:
+                self.logger.warning("X_train est un array 0D - investigation nécessaire")
+            if hasattr(X_test_split, 'shape') and len(X_test_split.shape) == 0:
+                self.logger.warning("X_test_split est un array 0D - investigation nécessaire")
             
             # Construction du dictionnaire
             preprocessed_data = {
@@ -418,11 +567,21 @@ class ProductClassificationPipeline:
                 'train_indices': train_indices,
                 'test_split_indices': test_split_indices
             }
+            
             return preprocessed_data
 
         except Exception as e:
             self.logger.error(f"Erreur chargement données : {str(e)}")
-            raise         
+            # Debug supplémentaire
+            for name, path in required_files.items():
+                if os.path.exists(path):
+                    try:
+                        npz_file = np.load(path, allow_pickle=True)
+                        self.logger.error(f"  {name}: fichiers={npz_file.files}")
+                        npz_file.close()
+                    except Exception as e2:
+                        self.logger.error(f"  {name}: erreur lecture={e2}")
+            raise
 
     def _extract_resnet_features(self, dataset, desc="Extraction features"):
         """
@@ -481,6 +640,7 @@ class ProductClassificationPipeline:
         Returns:
             Dict contenant les données prétraitées
         """
+
         try:
             # Vérification des fichiers prétraités existants
             features_dir = os.path.join(self.config.data_path, 'processed_data')
@@ -536,26 +696,26 @@ class ProductClassificationPipeline:
 
                 # d) Extraction features via _extract_resnet_features
                 #    1) Création dataset PyTorch pour train
-                train_dataset = self._create_dataset(X_train, y_train, df_name="X_train")
+                train_dataset = self._create_dataset(X_train, df_name="X_train")
                 X_train_features = self._extract_resnet_features(train_dataset, desc="Extraction features train")
 
                 #    2) Création dataset PyTorch pour test "officiel"
-                test_dataset = self._create_dataset(X_test_df, None, df_name="X_test")
+                test_dataset = self._create_dataset(X_test_df, df_name="X_test")
                 X_test_features = self._extract_resnet_features(test_dataset, desc="Extraction features test")
 
                 #    3) Création dataset PyTorch pour test_split
-                test_split_dataset = self._create_dataset(X_test_split, y_test_split, df_name="X_test_split")
+                test_split_dataset = self._create_dataset(X_test_split, df_name="X_test_split")
                 X_test_split_features = self._extract_resnet_features(test_split_dataset, desc="Extraction features test_split")
 
                 self.logger.info(f"Sauvegarde des fichiers images...")
                 # e) Sauvegarde via _save_processed_data
                 self._save_processed_data(
-                    X_train_features, 
+                    X_train_features['features'], 
                     y_train['prdtypecode'].values,
-                    X_test_features,
-                    X_test_split_features,
-                    y_test_split['prdtypecode'].values,
                     train_indices,
+                    X_test_features['features'],
+                    X_test_split_features['features'],
+                    y_test_split['prdtypecode'].values,
                     test_split_indices,
                     required_files
                 )
@@ -709,13 +869,13 @@ class ProductClassificationPipeline:
                     model = xgb.XGBClassifier(**model_params)
                     model.fit(X_fold_train, y_fold_train)
                     
-                elif model_type == 'lightgbm':
-                    model = LGBMClassifier(**model_params)
-                    model.fit(X_fold_train, y_fold_train)
+                # elif model_type == 'lightgbm':
+                #     model = LGBMClassifier(**model_params)
+                #     model.fit(X_fold_train, y_fold_train)
                     
-                elif model_type == 'catboost':
-                    model = CatBoostClassifier(**model_params)
-                    model.fit(X_fold_train, y_fold_train)
+                # elif model_type == 'catboost':
+                #     model = CatBoostClassifier(**model_params)
+                #     model.fit(X_fold_train, y_fold_train)
                     
                 elif model_type == 'logistic':
                     model = LogisticRegression(**model_params)
@@ -865,13 +1025,13 @@ class ProductClassificationPipeline:
                 # Initialisation du modèle selon le type
                 if model_type == 'xgboost':
                     self.model = xgb.XGBClassifier(**model_params)
-                elif model_type == 'lightgbm':
-                    X_train = np.asarray(X_train, dtype=np.float32)
-                    y_train = np.array([self.category_to_idx[label] for label in self.preprocessed_data['y_train']], dtype=np.int32)  
+                # elif model_type == 'lightgbm':
+                #     X_train = np.asarray(X_train, dtype=np.float32)
+                #     y_train = np.array([self.category_to_idx[label] for label in self.preprocessed_data['y_train']], dtype=np.int32)  
                     
-                    self.model = LGBMClassifier(**model_params)
-                elif model_type == 'catboost':
-                    self.model = CatBoostClassifier(**model_params)
+                #     self.model = LGBMClassifier(**model_params)
+                # elif model_type == 'catboost':
+                #     self.model = CatBoostClassifier(**model_params)
                 else:
                     raise ValueError(f"Type de modèle ML non supporté: {model_type}")
 
@@ -1067,30 +1227,68 @@ class ProductClassificationPipeline:
             if self.model is None:
                 raise ValueError("Le modèle n'est pas entraîné")
 
+            # 1. Gestion des NpzFile (objet retourné par np.load)
+            if hasattr(X, 'files'):  # C'est un NpzFile
+                print("Détection d'un NpzFile, extraction des données...")
+                # Essayer différentes clés communes
+                possible_keys = ['arr_0', 'features', 'X_test_split', 'X_test']
+                data_extracted = False
+                
+                for key in possible_keys:
+                    if key in X.files:
+                        X = X[key]
+                        print(f"Données extraites avec la clé '{key}'")
+                        data_extracted = True
+                        break
+                
+                if not data_extracted:
+                    # Prendre la première clé disponible
+                    first_key = X.files[0]
+                    X = X[first_key]
+                    print(f"Données extraites avec la première clé disponible '{first_key}'")
+
+            # 2. Gestion des scalaires numpy (array 0D)
             if isinstance(X, np.ndarray) and X.shape == ():
-                # Si X est un scalaire, on le convertit en array 2D
-                X = X.item()
-                if isinstance(X, dict) and 'features' in X:
+                X = X.item()  # Convertit en objet Python
+                print("Conversion d'un array 0D en objet Python")
+
+            # 3. Gestion des dictionnaires
+            if isinstance(X, dict):
+                if 'features' in X:
                     X = X['features']
+                    print("Extraction des features depuis un dictionnaire")
+                else:
+                    # Prendre la première valeur du dictionnaire
+                    first_key = list(X.keys())[0]
+                    X = X[first_key]
+                    print(f"Extraction des données avec la clé '{first_key}'")
+
+            # 4. Conversion en numpy array si nécessaire
+            if not isinstance(X, (np.ndarray, torch.Tensor)):
                 X = np.array(X)
+                print("Conversion en numpy array")
+
+            # 5. Assurer que X est 2D
+            if isinstance(X, np.ndarray):
                 if len(X.shape) == 1:
                     X = X.reshape(1, -1)
-            print("Type de X:", type(X))
-            print("Shape de X:", X.shape if hasattr(X, 'shape') else "pas de shape")
+                    print("Reshape de 1D vers 2D")
+                elif len(X.shape) > 2:
+                    # Aplatir les dimensions supplémentaires
+                    X = X.reshape(X.shape[0], -1)
+                    print(f"Reshape de {len(X.shape)}D vers 2D")
+
+            # === DEBUG INFORMATION ===
+            print(f"Type final de X: {type(X)}")
+            print(f"Shape finale de X: {X.shape if hasattr(X, 'shape') else 'pas de shape'}")
             if isinstance(X, np.ndarray):
-                print("Type des données:", X.dtype)
-                
+                print(f"Type des données: {X.dtype}")
+
+            # === PRÉDICTION ===
+            
             # Vérification du type de modèle
             is_dl_model = isinstance(self.model, NeuralClassifier)
             
-            # Assurer que X est 2D
-            if isinstance(X, (np.ndarray, list)):
-                X = np.array(X)
-            if len(X.shape) == 1:
-                X = X.reshape(1, -1)
-            # Debug après conversion
-            print("Shape après conversion:", X.shape)
-
             if is_dl_model:
                 self.model.eval()
                 # Conversion en tensor si nécessaire
@@ -1112,9 +1310,15 @@ class ProductClassificationPipeline:
 
                 predictions = np.array(predictions)
                 probabilities = np.array(probabilities)
+                
+                # Pour les modèles DL, les prédictions sont déjà des indices
+                # Les convertir en codes de catégorie
+                predictions = np.array([self.idx_to_category[int(idx)] for idx in predictions])
+                
             else:
                 # Pour les modèles ML classiques
                 self.logger.info("Prédiction avec modèle ML")
+                
                 if isinstance(self.model, xgb.XGBClassifier):
                     batch_size = 1000
                     predictions = []
@@ -1128,22 +1332,28 @@ class ProductClassificationPipeline:
                         probabilities.extend(batch_prob)
                         
                     probabilities = np.array(probabilities)
+                    predictions = np.array(predictions)
                 else:
                     predictions = self.model.predict(X)
                     probabilities = self.model.predict_proba(X)
 
-                    # Conversion des indices en codes de catégorie
-                    if isinstance(self.model, CatBoostClassifier):
-                        predictions = predictions.astype(int)
-                        
+                # Conversion des indices en codes de catégorie pour les modèles ML
                 predictions = np.array([self.idx_to_category[int(idx)] for idx in predictions])
 
+            print(f"Prédictions générées: {len(predictions)} échantillons")
+            print(f"Shape des probabilités: {probabilities.shape}")
+            
             return predictions, probabilities
 
         except Exception as e:
             self.logger.error(f"Erreur prédiction: {str(e)}")
+            self.logger.error(f"Type de X reçu: {type(X)}")
+            if hasattr(X, 'shape'):
+                self.logger.error(f"Shape de X: {X.shape}")
+            elif hasattr(X, 'files'):
+                self.logger.error(f"Fichiers dans NpzFile: {X.files}")
             raise
-    
+
     def predictions_exist(self, model_name):
         """Vérifie si les prédictions existent déjà"""
         pred_path = os.path.join('data', f'predictions_{model_name}.csv')
@@ -1235,15 +1445,15 @@ class ProductClassificationPipeline:
         y_pred_, probas = self.predict(X_test)
         if isinstance(self.model, NeuralClassifier):
             y_test = np.array([self.category_to_idx[label] for label in self.preprocessed_data['y_test_split']])
-            y_pred = y_pred_
+            y_pred = np.array([self.category_to_idx[pred] for pred in y_pred_])  # ← CORRECTION
             y_true = y_test
-        elif isinstance(self.model, LGBMClassifier):
-            y_test = np.array([self.category_to_idx[label] for label in self.preprocessed_data['y_test_split']], dtype=np.int32)
-            y_pred = np.array([self.category_to_idx[pred] for pred in y_pred_], dtype=np.int32).ravel()
-            y_true = y_test.ravel()
+        # elif isinstance(self.model, LGBMClassifier):
+        #     y_test = np.array([self.category_to_idx[label] for label in self.preprocessed_data['y_test_split']], dtype=np.int32)
+        #     y_pred = np.array([self.category_to_idx[pred] for pred in y_pred_], dtype=np.int32).ravel()
+        #     y_true = y_test.ravel()
             
-            # Création du dictionnaire inverse une seule fois
-            idx_to_category = {v: k for k, v in self.category_to_idx.items()}
+        #     # Création du dictionnaire inverse une seule fois
+        #     idx_to_category = {v: k for k, v in self.category_to_idx.items()}
         else:
             # Code original pour les autres modèles
             y_test = self.preprocessed_data['y_test_split']
@@ -1292,7 +1502,8 @@ class ProductClassificationPipeline:
             classe_mask = (y_true == classe)
             
             
-            if isinstance(self.model, (NeuralClassifier, LGBMClassifier)):
+            # if isinstance(self.model, (NeuralClassifier, LGBMClassifier)):
+            if isinstance(self.model, (NeuralClassifier)):
                 # Convertion de l'indice (0-26) en code de catégorie (10, 40, etc.)
                 real_code = self.idx_to_category[classe]  # Convertit l'indice en code de catégorie
                 category_name = self.category_names[real_code]  # Obtient le nom depuis le code

@@ -944,3 +944,35 @@
 2025-06-11 11:43:19,929 - classification_pipeline - INFO - Modèle neural_net chargé depuis ./data/models/neural_net
 2025-06-11 11:43:19,886 - classification_pipeline - INFO - Modèle texte SVM chargé avec succès
 2025-06-11 11:43:20,333 - classification_pipeline - INFO - Données texte préparées: 16984 échantillons
+2025-07-21 19:09:27,534 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:09:30,451 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-21 19:11:00,421 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:11:02,517 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-21 19:28:29,956 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:28:32,702 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-21 19:29:01,104 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-21 19:29:03,033 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 16:24:46,436 - classification_pipeline - INFO - Chargement des features pré-calculées...
+2025-07-22 16:24:49,932 - classification_pipeline - INFO - Chargement effectué avec succès.
+2025-07-22 16:24:50,617 - classification_pipeline - INFO - Indices sauvegardés dans data/indices
+2025-07-22 16:24:50,619 - classification_pipeline - INFO - Distribution des indices:
+2025-07-22 16:24:50,620 - classification_pipeline - INFO -   - Total: 84916
+2025-07-22 16:24:50,620 - classification_pipeline - INFO -   - Test: 16984 (20.0%)
+2025-07-22 16:24:50,622 - classification_pipeline - INFO -   - Train original: 67932 (80.0%)
+2025-07-22 16:24:50,622 - classification_pipeline - INFO -   - Train balanced (unique): 44050 (51.9%)
+2025-07-22 16:24:50,623 - classification_pipeline - INFO -   - Train balanced (total): 54000 (avec 9950 doublons (18.4%))
+2025-07-22 16:24:50,624 - classification_pipeline - INFO -   - Ignorés: 23882 (28.1%)
+2025-07-22 16:24:50,625 - classification_pipeline - INFO -   - Vérification: 84916 = 84916 ✓
+2025-07-22 16:25:01,810 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 16:25:01,947 - classification_pipeline - INFO - Modèle neural_net chargé depuis ./data/models/neural_net
+2025-07-22 16:25:06,009 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 16:25:06,074 - classification_pipeline - INFO - Modèle neural_net chargé depuis ./data/models/neural_net
+2025-07-22 16:25:28,592 - classification_pipeline - INFO - Modèle texte SVM chargé avec succès
+2025-07-22 16:25:29,100 - classification_pipeline - INFO - Données texte préparées: 16984 échantillons
+2025-07-22 16:40:36,861 - classification_pipeline - INFO - Modèle xgboost chargé depuis ./data/models/xgboost
+2025-07-22 16:40:36,921 - classification_pipeline - INFO - Modèle neural_net chargé depuis ./data/models/neural_net
+2025-07-22 16:40:37,452 - classification_pipeline - INFO - Modèle texte SVM chargé avec succès
+2025-07-22 16:40:37,858 - classification_pipeline - INFO - Données texte préparées: 16984 échantillons
+2025-07-22 17:50:53,847 - classification_pipeline - INFO - Modèle texte SVM chargé avec succès
+2025-07-22 17:50:54,637 - classification_pipeline - INFO - Données texte préparées: 16984 échantillons
+2025-07-22 18:03:03,742 - classification_pipeline - INFO - Prédictions texte sauvegardées pour SVM
